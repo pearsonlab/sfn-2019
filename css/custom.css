@@ -1,0 +1,28 @@
+p.ref {
+    font-size: 0.5em;
+    text-align: right;
+    /*color: blue;*/
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.reveal section img.grid-item {
+    object-fit: contain;
+    grid-row: span;
+    height: 200px;
+    border: none;
+    background: none;
+}
+
+.reveal section img.grid-img {
+    background: none;
+    border: none;
+    box-shadow: none;
+    object-fit: contain;
+}

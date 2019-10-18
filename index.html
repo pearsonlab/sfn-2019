@@ -1,0 +1,921 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					##Systems neuroscience beyond the tuning curve
+					John Pearson
+
+					[pearsonlab.github.io/beyond-tuning-curve](https://pearsonlab.github.io/beyond-tuning-curve)
+				</section>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/4f.png">
+					<div style="background-color: rgba(0, 0, 0, 0.75); padding: 10px" class="fragment fade-left">
+						<h3>How we decide</h3>
+						<ul>
+							<li>
+								Explore/exploit
+								<ul>
+									<li style="font-size: 0.5em">Pearson, Hayden, Raghavachari, Platt (<em>Curr. Bio.</em>, 2009)</li>
+									<li style="font-size: 0.5em">Addicott, Pearson, Froeliger, Platt, McClernon (<em>Psych. Res.</em>, 2014)</li>
+								</ul>
+							</li>
+							<li>
+								Temporal discounting
+								<ul>
+									<li style="font-size: 0.5em">Pearson, Hayden, Platt (<em>Frontiers</em>, 2010)</li>
+									<li style="font-size: 0.5em">Blanchard, Pearson, Hayden (<em>PNAS</em>, 2013)</li>
+								</ul>
+							</li>
+							<li>
+								Learning under uncertainty
+								<ul>
+									<li style="font-size: 0.5em">Hayden, Heilbronner, Pearson, Platt (<em>J. Neuro.</em>, 2011)</li>
+									<li style="font-size: 0.5em">Pearson, Heilbronner, Barack, Hayden, Platt (<em>Trends in Cog. Sci.</em>, 2011)</li>
+								</ul>
+							</li>
+							<li>
+								Foraging
+								<ul>
+									<li style="font-size: 0.5em">Hayden, Pearson, Platt (<em>Nat. Neuro.</em>, 2011)</li>
+									<li style="font-size: 0.5em">Pearson, Watson, Platt (<em>Neuron</em>, 2014)</li>
+								</ul>
+							</li>
+							<li>
+								Social Reward
+								<ul>
+									<li style="font-size: 0.5em">Pearson, Watson, Klein, Ebitz, Platt (<em>Frontiers</em>, 2013)</li>
+									<li style="font-size: 0.5em">Chang, Fagan, Toda, Utevsky, Pearson, Platt (<em>PNAS</em>, 2015)</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+					<aside class="notes" data-markdown>
+						- [upper left](https://thedrinkingbird.files.wordpress.com/2013/05/img_2476.jpg)
+						- [upper right](http://seancrane.com/galleries/japan/) Sean Crane
+						- [lower right](http://www.gettyimages.com/license/153234629): MOHD RASFAN/AFP/GettyImages
+						- [lower right](https://commons.wikimedia.org/wiki/File:Baviaan2.JPG) Dick Mudde
+					</aside>
+				</section>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/macaque_grooming.jpg">
+					<h2>But how do you turn this...</h2>
+					<aside class="notes" data-markdown>
+					[photo credit](https://lucygoes.files.wordpress.com/2013/10/img_6986.jpg)
+					</aside>
+				</section>
+				<section>
+					<h3>...into <em>this?</em></h3>
+					<div style="float:left; width:50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/fmri_activation.png" >
+					</div>
+					<div style="float:left; width:50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/gold_shadlen.png" >
+					</div>
+				</section>
+				<section data-markdown>
+					##The tuning curve paradigm
+					- Subject repeats same behavior many times
+					- Average neural firing across repeats
+					- Neuronal populations are characterized by tuning
+				</section>
+				<section data-markdown>
+					##The prefrontal reality
+					- Complex behaviors never quite repeated
+					- Dynamics not quite regular enough to average
+					- Where are the tuning curves?
+				</section>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/deep_learning_cover.jpg" data-background-size="contain">
+					<div style="background-color: rgba(0, 0, 0, 0.75); padding: 10px" class="fragment fade-left">
+						<h2>Why machine learning?</h2>
+						<ul>
+							<li class="fragment fade-in">
+								Models that <em>actually fit</em>
+								<ul>
+									<li>is the model <em>really</em> a good model?</li>
+									<li>structured black box</li>
+								</ul>
+							</li>
+							<li class="fragment fade-in">
+								The ANN as model system
+								<ul>
+									<li>algorithm as homology</li>
+									<li>what details matter?</li>
+									<li>takes distributed, asynchronous seriously</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/lab_logo/plab_logo_light.svg" style="border: none; background: none; box-shadow: none">
+					<h2>What we do</h2>
+					Organization of complex foraging, social behavior.
+					<br>
+					Neural mechanisms from data-driven models
+					<br>
+					Whole-brain dynamics
+				</section>
+				<section data-markdown>
+					### Today's plan:
+					Three exercises in removing constraints:
+					- Learning stimulus space without labels ([link](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005645))
+					- Complex behavior without trial averaging ([arXiv](https://arxiv.org/abs/1702.07319))
+					- Single-trial analysis of neural spiking (in prep)
+				</section>
+				<section>
+					<h3>How do neurons see the world?</h3>
+					<div style="float:left; width:25%">
+						<p></p>
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/gabor.jpg">
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/cartoon_faces.png" >
+						<p class="ref">Freiwald, Tsao, Livingstone (<em>Nature Neuroscience</em>, 2009)</p>
+					</div>
+				</section>
+				<section>
+					<h3>But what if we use this?</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/etho/agonism.ogg" type="video/webm">
+						Your browser does not support the video tag.
+					</video>
+					<p class="ref">Adams, Pearson, and Platt (in prep)</p>
+				</section>
+				<section>
+					<div style="float:left; width:25%">
+						<p></p>
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/xin.jpg" >
+						<p>Xin Chen</p>
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/beck.jpg" >
+						<p>Jeff Beck</p>
+					</div>
+					<div style="float:left; width:25%">
+					</div>
+				</section>
+				<section>
+					<h3>Let's run an experiment</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/movie.svg" style="background: white">
+					<p class="ref">Chen, Beck, Pearson (PLoS Comp. Bio, 2017)</p>
+				</section>
+				<section>
+					<h3>Let's imagine a model</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/model_cartoon.svg" style="background: white">
+				</section>
+				<section data-markdown>
+					###We are not the first
+					- Gallant lab (fMRI) ([Huth 2012](http://www.sciencedirect.com/science/article/pii/S0896627312009348), [Stansbury 2013](http://www.sciencedirect.com/science/article/pii/S0896627313005503))
+					- Continuous latent states ([Park 2014](http://www.nature.com/neuro/journal/v17/n10/abs/nn.3800.html), [Buesing 2014](http://papers.nips.cc/paper/5339-clustered-factor-analysis-of-multineuronal-spike-data), [Archer 2015](https://arxiv.org/abs/1511.07367), [Park 2015](http://papers.nips.cc/paper/5790-unlocking-neural-population-non-stationarities-using-hierarchical-dynamics-models))
+					- Discrete latent states ([Escola 2011](http://www.mitpressjournals.org/doi/abs/10.1162/NECO_a_00118#.WNqSexLythE), [Putzky 2014](http://papers.nips.cc/paper/5338-a-bayesian-model-for-identifying-hierarchically-organised-states-in-neural-population-activity))
+					- ...and many more
+				</section>
+				<section data-markdown>
+					###So what's different?
+					- Previous models: latents capture *internal* dynamics
+						- latents can be driven by stimuli
+						- but vary for presentations of the same stimulus
+					- Our model: latents capture *stimulus* dynamics
+						- each stimulus frame has a set of binary tags
+						- tags follow a Hidden (semi-)Markov Model
+						- latents are *the same* for repeated stim presentations
+				</section>
+				<section>
+					<h3>Let's put that in math</h3>
+					$$
+					\begin{align}
+					N_{tu} &\sim \mathrm{Poisson}(\Lambda_{tu}\cdot\theta) \\
+					\theta &\sim \mathrm{Gamma}(s, s) \\
+					\Lambda_{tu} &= \lambda_{0u}
+					\prod_{k=1}^K (\lambda_{zuk})^{z_{tk}}
+					\prod_{r=1}^R (\lambda_{xuk})^{x_{tr}}
+					\end{align}
+					$$
+
+					<p>firing rate = baseline * latents * externals * noise</p>
+				</section>
+				<section data-markdown>
+					###Model fitting
+					We have $p(N|Z, \Theta)$
+
+					$Z$: latent variables, $\Theta$: model parameters
+
+					We want
+					$$
+					p(Z, \Theta | N) \propto p(N|Z, \Theta)\, p(Z) \, p(\Theta)
+					$$
+
+					But too hard to do Bayes' Rule exactly!
+				</section>
+				<section data-markdown>
+					> Do you want the wrong answer to the right question or the right answer to the wrong question? I think you want the former.
+					>
+					> &mdash; David Blei
+				</section>
+				<section data-markdown>
+					###Variational Bayesian (VB) Inference
+					- Replace true posterior $p$ with *approximate* posterior $q$
+					- Minimize "distance" $KL(q \Vert p)$ between actual and approximate posteriors
+					- Same as maximizing the evidence lower bound (ELBO): $\log p(N)$
+				</section>
+				<section>
+					<h3>Experiment I: Synthetic data</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/synthetic_comparison.svg" style="background: white">
+				</section>
+				<section>
+					<h3>Experiment II: Temporal Cortex</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/imgclust_web.svg" style="background: white; width:100%">
+					<p class="ref">McMahon et al. (<em>PNAS</em>, 2014)</p>
+					<p>Face, monkey, and body part cells!</p>
+				</section>
+				<section>
+					<h3>Experiment II: Temporal Cortex</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/imgclust_sub_web.svg" style="background: white; width:100%">
+					<p>Viewpoint selectivity!</p>
+				</section>
+				<section data-markdown>
+					###What did we do?
+					- Given spike counts, *what features drive firing?*
+					- Multiply "tag" each stimulus frame
+					- Model recovers features from even modest data sizes when signal is strong
+					- Goal is to look for patterns that **suggest new experiments.**
+				</section>
+				<section>
+					<h3>From movement to strategy</h3>
+					<img src="https://68.media.tumblr.com/5b4b51d6a41b1bfa52c323836056ab8d/tumblr_inline_olwur4ZtWq1ubozr5_500.gif" style="width: 700px">
+				</section>
+				<section>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/shariq.jpg" >
+						<p>Shariq Iqbal</p>
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/cbdrucker.jpg" >
+						<p>Caroline Drucker</p>
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/jfg.jpg" >
+						<p>Jean-Francois Gari&eacute;py</p>
+					</div>
+					<div style="float:left; width:25%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/PlattMichael.jpg" >
+						<p>Michael Platt</p>
+					</div>
+				</section>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/chess.jpg">
+					<aside class="notes" data-markdown>
+						### Pros:
+						- Well-studied, normative solutions
+
+						### Cons:
+						- Highly idealized, limited dynamics
+						- Biologically aligned?
+					</aside>
+				</section>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/penalty-shot.jpg">
+					<aside class="notes" data-markdown>
+						- Doesn't matter if it's social
+							- Requires anticipating another agent
+						- Repeatable, but lots of variation
+						- Decisions tightly linked to movement
+					</aside>
+				</section>
+				<section>
+					<h3>Penalty Shot</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/sess130_new.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<p class="ref">Iqbal and Pearson (arXiv)</p>
+					<aside class="notes" data-markdown>
+					  - two monkeys, shooter and goalie (shooter recorded)
+					  - controlled by joysticks
+					  - roles rotated, animals know each other
+					  - repeated sessions
+					  - rapidly learned, rich dynamics
+					</aside>
+				</section>
+				<section>
+					<div style="width: 50%; float: left; text-align: left">
+						<video autoplay loop  src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/real_trial.mp4" type="video/mp4" id="trace_video">
+							Your browser does not support the video tag.
+						</video>
+						<script>
+						var vid = document.getElementById("trace_video");
+vid.playbackRate = 1.;
+						</script>
+					</div>
+					<div style="width: 50%; float: right; font-size: .9em" >
+						<h3>Complexity tax</h3>
+						<ul style="font-size: 0.85">
+							<li>each trial a different length</li>
+							<li>how to average, align?</li>
+							<li>need to "reduce" dynamics</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h3>Real trials</h3>
+					<div style="width: 50%; margin: auto">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/real_traces.svg" alt="">
+					</div>
+				</section>
+				<section data-markdown>
+					### What we want
+					- ~~Joystick censoring~~
+					- ~~Details of motor execution~~
+					- Model of latent cognitive state
+					- Capture interaction between players
+
+				</section>
+				<section data-markdown>
+					### Our approach
+					- Borrow from control theory, time series
+					- Structured black box models (pieces make sense)
+					- Neural networks for flexible fitting
+				</section>
+				<section>
+					<h3>Modeling I</h3>
+					Observed positions at each time ($y_t$):
+
+					$$
+					y_t = \begin{bmatrix}
+					y_{goalie} &
+					x_{puck} &
+					y_{puck}
+					\end{bmatrix}^\top
+					$$
+
+					<br>
+					Control inputs ($u_t$) drive changes in observed positions:
+					$$y_{t + 1} = y_t + v_{max} \sigma(u_t)$$
+
+					<br>
+					<b>Goal</b>: predict control inputs from trial history:
+					$$u_t = F(y_{1:t})$$
+				</section>
+				<section>
+					<h3>Modeling II</h3>
+					Assumption: PID control
+					$$
+					u_t = u_{t-1} + L * (g_{t} - y_{t}) + \epsilon_t
+					$$
+					<br>
+					<ul>
+					  <li>linear control model: $L$</li>
+					  <li>goal (set point): $g_{t}$</li>
+					  <li>error signal: $e_t \equiv g_{t} - y_{t}$</li>
+					  <li>observation noise: $\epsilon_t$</li>
+				  </ul>
+				</section>
+				<section>
+					<h3>Modeling III</h3>
+					<h5>Goal model:</h5>
+					$$
+					\log p(g) = -\beta E(g|s) - \log Z \\
+					E(g|s) = \sum_t \left[ \frac{1}{2} \Vert g_t - g_{t-1}\Vert^2 + U(g_t, s_t)\right]
+					$$
+					<br>
+					<h5>How do we interpret this?</h5>
+					<ul>
+						<li>Goals minimize an "energy"</li>
+						<li>"Kinetic" energy favors smoothness</li>
+						<li>"Potential" $U$ captures player interaction</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Modeling IV</h3>
+					<ul>
+						<li>$U$ is a problem</li>
+						<li>What if $U$ were just quadratic?</li>
+						<li>Model $e^U$ as a *mixture* of normals</li>
+						<li>Use a Gaussian Mixture:
+							<ul>
+								<li>$U(g, s) = \sum_k w_k\mathcal{N}(g | \mu_k(s), \lambda_k^{-1}(s))$</li>
+								<li>i.e., goal mixture depends on current state</li>
+							</ul>
+							</li>
+					</ul>
+				</section>
+
+				</section>
+				<section>
+					<h3>Our model</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/model_diagram.svg" style="background:white">
+				</section>
+				<section>
+					<h3>Model fitting</h3>
+					<h5>Variational Bayes autoencoder</h5>
+					<ul>
+					<li>Encoding model:</li>
+						<ul>
+						<li>goals: GMM</li>
+						<li>latent control: PID + Gaussian noise</li>
+						<li>observed control: soft censoring</li>
+						</ul>
+					<br>
+					<li>Decoding model:</li>
+						<ul>
+						<li>state space model <a href="https://arxiv.org/abs/1511.07367">(Archer et al., 2015)</a></li>
+						<li>= Kalman filter for linear system</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h3>Implementation</h3>
+					<ul>
+						<li>Variational Inference:
+							$$
+							\max_{\phi, \theta} \mathbb{E}_q[\log p_\theta(x, z)] + \mathbb{H}[q_\phi(z)] \le \log p_\theta(x)
+							$$
+						</li>
+						<li>Stochastic Gradients:
+							 $$
+							 \mathbb{E}_q\left[f(z)\right] \approx f(z^*) \quad z^* \sim q_\phi(z)
+							 $$
+						</li>
+						<li>Reparameterization Trick:
+							$$
+							Z = h(\epsilon, \phi) \quad \epsilon \sim \mathcal{N}(0, 1)
+							$$
+						</li>
+						<li>Code in <a href="https://www.tensorflow.org/">TensorFlow</a> and <a href="http://edwardlib.org/">Edward</a> </li>
+					</ul>
+				</section>
+				<!-- <section>
+					<h3>It works!</h3>
+					Ground truth recovery on toy data
+				</section> -->
+				<section>
+					<h3>It fits!</h3>
+					<div style="width: 50%; float: left; text-align: left">
+						<img  src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/pos_fit.svg" style="border: none; background: none; box-shadow: none">
+						</img>
+					</div>
+					<div style="width: 50%; float: right; text-align: left">
+						<img  src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/single_trial_control.svg" style="border: none; background: none; box-shadow: none">
+						</img>
+					</div>
+				</section>
+				<section>
+					<h3>Generated Trials</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/gen_data.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<aside class="notes" data-markdown>
+					  - Totally new behavior
+					  - Captures some of the richness of original data
+					  - Gives us confidence that our model is plausible
+					  - *Much* stronger test than simple goodness-of-fit
+					    - You can have a model that "fits" but the
+						observed data are atypical of the model
+					</aside>
+				</section>
+				<section>
+					<h3>Generated trials</h3>
+					<div style="width: 50%; float: left">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/real_traces.svg" alt="">
+					</div>
+					<div style="width: 50%; float: right">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/gen_traces.svg" alt="">
+					</div>
+				</section>
+				<section>
+					<h3>A sample trial</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/real_trial.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
+				<section>
+					<h3>Inferred goals</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/real_trial_goals.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
+				<section>
+					<h3>Potential energy function</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/real_trial_value.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
+				<section data-markdown>
+					###What did we do?
+					- Dynamic control tasks let us leverage motor behavior to study cognitive and social decisions.
+					- Structured black-box models allow us to carve behavior into interpretable pieces.
+					- We inferred a value function capable of explaining behavior in terms of goals.
+				</section>
+				<section>
+					<h2>Modeling neural data</h2>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/john_talk/spike_trajectories.svg"
+					style="">
+				</section>
+				<section>
+					<h2>Outcomes matter</h2>
+					<p style="font-size: 0.5em">(Even more than they should)</p>
+					<div class="wrapper" style="">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/post_trial_firing.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/post_trial_firing2.svg"
+						style="grid-column:3/5">
+					</div>
+					<table>
+						<tr>
+							<th></th>
+							<th>DMPFC</th>
+							<th>DLPFC</th>
+						</tr>
+						<tr>
+							<th>Modulated</th>
+							<td>58%</td>
+							<td>43%</td>
+						</tr>
+						<tr>
+							<th>Close &ne; Easy</th>
+							<td>20%</td>
+							<td>18%</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Neural modeling</h2>
+					We use <a href="https://www.biorxiv.org/content/biorxiv/early/2017/06/20/152884.full.pdf">LFADS</a>:
+					<br>
+					<div style="width: 50%; float: left; text-align: left">
+						<ul>
+							<li>Firing rates are linear combinations of factors</li>
+							<li>Factors form a low-d dynamical system</li>
+							<li>Factors shared across neurons, sessions</li>
+							<li>(Sparse) regression of factors on behavior</li>
+						</ul>
+					</div>
+					<div style="width: 50%; float: right; text-align: left">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/LFADS_cartoon.svg" style="border: none; background: white">
+					</div>
+				</section>
+				<section>
+					<h2>Neural modeling</h2>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/lfads_regressors.svg" style="border: none; background: white">
+				</section>
+				<section>
+					<h2>What does this suggest?</h2>
+					<ul>
+						<li>Post-trial D(M|L)PFC reflects more than reward </li>
+						<li>Within-trial firing reflects progress toward outcome</li>
+						<li>Within-trial firing reflects across-trial variance
+							<ul>
+								<li>Strategy complexity?</li>
+								<li>Decision/control difficulty?</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section data-markdown>
+					## Future directions
+				</section>
+				<section>
+					<h2>Individual differences</h2>
+					<div class="wrapper" style="height: 800px">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/RealTrials_21147.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/RealTrials_21150.svg"
+						style="grid-column:3/5">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/GeneratedTrials_21147.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/GeneratedTrials_21150.svg"
+						style="grid-column:3/5">
+						<p class="ref" style="grid-column:3/5; align-self: start">McDonald, Broderick, Huettel, and Pearson</p>
+					</div>
+				</section>
+				<!-- <section>
+					<h2>Focus on changepoints</h2>
+					<div class="wrapper" style="">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/PK_gradients_kelsey/Fig1--PointySubTraj.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/PK_gradients_kelsey/Fig2--PointySubTrajPlusChangePoints.svg"
+						style="grid-column:3/5">
+					</div>
+				</section>
+				<section>
+					<h2>Gaussian Process classification</h2>
+					<div class="wrapper" style="">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/PK_gradients_kelsey/Fig1--PointySubTraj.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/PK_gradients_kelsey/Fig4--HeatmapIndivSubj.svg"
+						style="grid-column:3/5">
+					</div>
+				</section>
+				<section>
+					<h2>Opponent Sensitivity</h2>
+					<div class="wrapper" style="">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/PK_gradients_kelsey/Fig1--PointySubTraj.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/PK_gradients_kelsey/Fig5--TimePointGradientsforBothOpps.svg"
+						style="grid-column:3/5">
+					</div>
+				</section> -->
+				<section>
+					<h2>Pacman</h2>
+					<video width="90%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/pacman/pac_goals.mp4" type="video/mp4" id="pacman_goals_vid">
+						Your browser does not support the video tag.
+					</video>
+					<p class="ref">Yoo, Iqbal, Hayden, and Pearson</p>
+					<script>
+					var vid = document.getElementById("pacman_goals_vid");
+					vid.playbackRate = 0.5;
+					</script>
+				</section>
+				<section>
+					<h2>Large-scale time series</h2>
+					<div class="wrapper">
+						<div style="grid-column: 1/3">
+							<ul>
+								<li>Intractable epilepsy</li>
+								<li>~5 days 24/7 monitoring</li>
+								<li>~100 ECoG sensors + A/V</li>
+								<li>~100 GB per patient</li>
+								<li>Deidentified data to <a href="https://aws.amazon.com/">Amazon</a></li>
+								<li><a href="http://spark.apache.org/">Spark</a> for in-memory cluster computing</li>
+							</ul>
+						</div>
+						<img class="grid-img" src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/aws-images/aws-structure.png" style="grid-column: 3/5">
+					</div>
+				</section>
+				<section data-markdown>
+					## Conclusions
+					Modeling is a tool for doing the *right* experiment
+					- Model single trials instead of averaging across trials
+					- Data-driven firing patterns, not tuning curves
+					- Population dynamics, not static single units
+				</section>
+				<section>
+					<h2>Sponsors</h2>
+					<div class="wrapper" style="height: 800px">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/bd2k_logo.png"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/US-NIH-NIMH-Logo.svg"
+						style="grid-column:3/5">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/misc/Nvidia_image_logo.svg"
+						style="grid-column:1/3; background: white; padding: 15px">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/misc/Amazon_logo_plain.svg"
+						style="grid-column:3/5; background: white; padding: 15px">
+					</div>
+				</section>
+				<section>
+					<div class="wrapper" style="">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/xin.jpg"
+						style="grid-column: 1/2">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/shariq.jpg"
+						style="grid-column: 2/3">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/sam.jpg"
+						style="grid-column: 3/4">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/kelsey.jpg"
+						style="grid-column: 4/5">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/qian.jpg"
+						style="grid-column: 1/2">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/robert.jpg"
+						style="grid-column: 2/3">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/athelia.jpg"
+						style="grid-column: 3/4">
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/abhishek.jpg"
+						style="grid-column: 4/5">
+						<!-- <img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/bd2k_logo.png"
+						style="grid-column: 1/2"> -->
+						<img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/lab_logo/plab_logo_light.svg"
+						style="grid-column: 2/4">
+						<!-- <img
+						class="grid-item"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/US-NIH-NIMH-Logo.svg"
+						style="grid-column: 4/5"> -->
+					</div>
+				</section>
+
+
+				<!-- extra slides -->
+
+				<section>
+					<h3>A social brain?</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/mars_tpj.png" style="width: 75%">
+					<p class="ref">Mars et al. (PNAS 2014)</p>
+				</section>
+				<section>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/etho_turn.png" alt="">
+				</section>
+				<section>
+					<h3>Same behavior, different mechanisms</h3>
+					<img  src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/marr.png" style="border: none; background: white; box-shadow: none">
+					</img>
+					<p class="ref">Adams, Watson, Pearson, and Platt (2012)</p>
+				</section>
+				<section>
+					<h3>Foraging, for instance</h3>
+					<img  src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/foraging.png" style="border: none; background: white; box-shadow: none">
+					</img>
+					<p class="ref">Pearson, Watson, and Platt (2014)</p>
+				</section>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/animatronic.jpg" data-background-size="contain">
+					<blockquote cite="https://www.quora.com/What-did-Richard-Feynman-mean-when-he-said-What-I-cannot-create-I-do-not-understand", style="background-color: rgba(150, 150, 150, 0.75)">
+					What I cannot create, I do not understand. &mdash; Richard Feynman
+					</blockquote>
+					<aside class="notes" data-markdown>
+						# A note on method
+						- this is what I mean by neuroengineering
+							- *reverse* engineering
+						- not sufficient, but necessary
+						- trying to build it means understanding constraints
+						- most interesting ideas in neuro theory about how *ANN*s learn
+
+						### photo credit:
+						[link](https://www.behance.net/gallery/26305123/ANIMATRONIC-AI-FOR-SPIELBERGS-EXTANT)
+					</aside>
+				</section>
+				<section data-markdown>
+					###A reverse engineering approach
+					- Work "outside-in"
+					- Focus on computational constraints
+					- "Structured black box" modeling
+				</section>
+				<section>
+					<h3>And in diagram form</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/model_formal.svg" style="background: white">
+				</section>
+				<section>
+					<h3>Experiment II: Parietal Cortex</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/roitman.svg" style="background: white; width:80%">
+					<p class="ref">Roitman and Shadlen (<em>J. Neuro.</em>, 2002)</p>
+				</section>
+				<section>
+					<h3>Experiment III: Temporal Cortex</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/imgclust_neurons.svg" style="background: white; width:100%">
+				</section>
+				<section>
+					<h3>Predicting final target</h3>
+					<div style="float: left; width: 50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/start_trial_end_predict.svg" alt="">
+					</div>
+					<div style="float: right; width: 50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/end_trial_end_predict.svg" alt="">
+					</div>
+				</section>
+				<section>
+					<h2>Previous state of the art</h2>
+					<div class="wrapper" >
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/john_talk/dlgm_generated.png"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/john_talk/vrnn_generated.png"
+						style="grid-column:3/5">
+						<p class="ref" style="grid-column:1/3; align-self: start">Variational Autoencoder</p>
+						<p class="ref" style="grid-column:3/5; align-self: start">Variational Recurrent Neural Network</p>
+					</div>
+				</section>
+				<section>
+					<h3>A potential training signal</h3>
+					<div style="float: left; width: 50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/post_trial_firing.svg" alt="">
+					</div>
+					<div style="float: right; width: 50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/post_trial_firing2.svg" alt="">
+					</div>
+				</section>
+				<section>
+					<h3>A potential training signal</h3>
+					<div style="float: left; width: 50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/regression_coeffs_DMPFC.svg" alt="">
+					</div>
+					<div style="float: right; width: 50%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/regression_coeffs_DLPFC.svg" alt="">
+					</div>
+					<br>
+					<table>
+						<tr>
+							<th></th>
+							<th>DMPFC</th>
+							<th>DLPFC</th>
+						</tr>
+						<tr>
+							<th>Win > Loss</th>
+							<td>33%</td>
+							<td>25%</td>
+						</tr>
+						<tr>
+							<th>Both effects</th>
+							<td>15%</td>
+							<td>9%</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h3>Probing the model</h3>
+					<div style="width: 50%; float: left">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/init_both_down.svg" alt="">
+					</div>
+					<div style="width: 50%; float: right">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/init_goalieup_balldown.svg" alt="">
+					</div>
+				</section>
+				<section>
+					<h3>Initial goal distribution</h3>
+					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/g0_fit.svg" alt="">
+				</section>
+				<section>
+					<h2>Let's view that strategically</h2>
+					<div class="wrapper" style="">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/john_talk/spike_density_converging.svg"
+						style="grid-column:1/3">
+						<img class="grid-img"
+						src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/john_talk/spike_density_diverging.svg"
+						style="grid-column:3/5">
+						<p style="grid-column:1/3; align-self: start">Opponents Converging</p>
+						<p style="grid-column:3/5; align-self: start">Opponents Diverging</p>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				// math: {
+				//         mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+				//         config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			    // },
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
