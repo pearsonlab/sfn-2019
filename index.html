@@ -26,51 +26,40 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown>
-					##Systems neuroscience beyond the tuning curve
+					##Dynamic decisions and strategic repertoires in simulated multi-prey pursuit
 					John Pearson
 
-					[pearsonlab.github.io/beyond-tuning-curve](https://pearsonlab.github.io/beyond-tuning-curve)
+					[pearsonlab.github.io/sfn-2019](https://pearsonlab.github.io/sfn-2019)
+				</section>
+				<section>
+					<div style="float:left; width:33%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/sam.jpg" >
+						<p>Sam Yin</p>
+					</div>
+					<div style="float:left; width:33%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/syoo.jpg">
+						<p>Michael Yoo</p>
+					</div>
+					<div style="float:left; width:33%">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/website/hayden.jpg" >
+						<p>Ben Hayden</p>
+					</div>
 				</section>
 				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/4f.png">
 					<div style="background-color: rgba(0, 0, 0, 0.75); padding: 10px" class="fragment fade-left">
-						<h3>How we decide</h3>
+						<h3>Why natural tasks?</h3>
 						<ul>
-							<li>
-								Explore/exploit
-								<ul>
-									<li style="font-size: 0.5em">Pearson, Hayden, Raghavachari, Platt (<em>Curr. Bio.</em>, 2009)</li>
-									<li style="font-size: 0.5em">Addicott, Pearson, Froeliger, Platt, McClernon (<em>Psych. Res.</em>, 2014)</li>
-								</ul>
+							<li class="fragment">
+								Selection pressure determines function
 							</li>
-							<li>
-								Temporal discounting
-								<ul>
-									<li style="font-size: 0.5em">Pearson, Hayden, Platt (<em>Frontiers</em>, 2010)</li>
-									<li style="font-size: 0.5em">Blanchard, Pearson, Hayden (<em>PNAS</em>, 2013)</li>
-								</ul>
+							<br>
+							<li class="fragment">
+								Study brain in normal operating regime
 							</li>
-							<li>
-								Learning under uncertainty
-								<ul>
-									<li style="font-size: 0.5em">Hayden, Heilbronner, Pearson, Platt (<em>J. Neuro.</em>, 2011)</li>
-									<li style="font-size: 0.5em">Pearson, Heilbronner, Barack, Hayden, Platt (<em>Trends in Cog. Sci.</em>, 2011)</li>
-								</ul>
+							<br>
+							<li class="fragment">
+								Engage multiple brain systems simultaneously
 							</li>
-							<li>
-								Foraging
-								<ul>
-									<li style="font-size: 0.5em">Hayden, Pearson, Platt (<em>Nat. Neuro.</em>, 2011)</li>
-									<li style="font-size: 0.5em">Pearson, Watson, Platt (<em>Neuron</em>, 2014)</li>
-								</ul>
-							</li>
-							<li>
-								Social Reward
-								<ul>
-									<li style="font-size: 0.5em">Pearson, Watson, Klein, Ebitz, Platt (<em>Frontiers</em>, 2013)</li>
-									<li style="font-size: 0.5em">Chang, Fagan, Toda, Utevsky, Pearson, Platt (<em>PNAS</em>, 2015)</li>
-								</ul>
-							</li>
-						</ul>
 					</div>
 
 					<aside class="notes" data-markdown>
@@ -80,231 +69,175 @@
 						- [lower right](https://commons.wikimedia.org/wiki/File:Baviaan2.JPG) Dick Mudde
 					</aside>
 				</section>
-				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/macaque_grooming.jpg">
-					<h2>But how do you turn this...</h2>
+				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2019/charles_pursuit.jpeg">
+					<div style="background-color: rgba(0, 0, 0, 0.75); padding: 10px" class="fragment fade-left">
+						<h3>Why pursuit?</h3>
+						<ul>
+							<li class="fragment">
+								Canonical natural behavior
+							</li>
+							<br>
+							<li class="fragment">
+								Really several (looped) behaviors:
+								<ul>
+									<li>Target detection</li>
+									<li>Target selection</li>
+									<li>Strategy selection</li>
+									<li>Motor planning</li>
+									<li>Motor execution</li>
+								</ul>
+							</li>
+							<br>
+							<li class="fragment">
+								Multiple intersecting optimal/empirical models
+							</li>
+					</div>
+
 					<aside class="notes" data-markdown>
-					[photo credit](https://lucygoes.files.wordpress.com/2013/10/img_6986.jpg)
 					</aside>
 				</section>
 				<section>
-					<h3>...into <em>this?</em></h3>
-					<div style="float:left; width:50%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/fmri_activation.png" >
-					</div>
-					<div style="float:left; width:50%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/gold_shadlen.png" >
-					</div>
-				</section>
-				<section data-markdown>
-					##The tuning curve paradigm
-					- Subject repeats same behavior many times
-					- Average neural firing across repeats
-					- Neuronal populations are characterized by tuning
-				</section>
-				<section data-markdown>
-					##The prefrontal reality
-					- Complex behaviors never quite repeated
-					- Dynamics not quite regular enough to average
-					- Where are the tuning curves?
-				</section>
-				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/deep_learning_cover.jpg" data-background-size="contain">
-					<div style="background-color: rgba(0, 0, 0, 0.75); padding: 10px" class="fragment fade-left">
-						<h2>Why machine learning?</h2>
-						<ul>
-							<li class="fragment fade-in">
-								Models that <em>actually fit</em>
-								<ul>
-									<li>is the model <em>really</em> a good model?</li>
-									<li>structured black box</li>
-								</ul>
-							</li>
-							<li class="fragment fade-in">
-								The ANN as model system
-								<ul>
-									<li>algorithm as homology</li>
-									<li>what details matter?</li>
-									<li>takes distributed, asynchronous seriously</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section>
-					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/lab_logo/plab_logo_light.svg" style="border: none; background: none; box-shadow: none">
-					<h2>What we do</h2>
-					Organization of complex foraging, social behavior.
-					<br>
-					Neural mechanisms from data-driven models
-					<br>
-					Whole-brain dynamics
-				</section>
-				<section data-markdown>
-					### Today's plan:
-					Three exercises in removing constraints:
-					- Learning stimulus space without labels ([link](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005645))
-					- Complex behavior without trial averaging ([arXiv](https://arxiv.org/abs/1702.07319))
-					- Single-trial analysis of neural spiking (in prep)
-				</section>
-				<section>
-					<h3>How do neurons see the world?</h3>
-					<div style="float:left; width:25%">
-						<p></p>
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/gabor.jpg">
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/cartoon_faces.png" >
-						<p class="ref">Freiwald, Tsao, Livingstone (<em>Nature Neuroscience</em>, 2009)</p>
-					</div>
-				</section>
-				<section>
-					<h3>But what if we use this?</h3>
-					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/etho/agonism.ogg" type="video/webm">
+					<h3>Simulated Multi-Prey Pursuit</h3>
+					<video width="75%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/sess130_new.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
-					<p class="ref">Adams, Pearson, and Platt (in prep)</p>
-				</section>
-				<section>
-					<div style="float:left; width:25%">
-						<p></p>
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/xin.jpg" >
-						<p>Xin Chen</p>
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/ccn2017/beck.jpg" >
-						<p>Jeff Beck</p>
-					</div>
-					<div style="float:left; width:25%">
-					</div>
-				</section>
-				<section>
-					<h3>Let's run an experiment</h3>
-					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/movie.svg" style="background: white">
-					<p class="ref">Chen, Beck, Pearson (PLoS Comp. Bio, 2017)</p>
-				</section>
-				<section>
-					<h3>Let's imagine a model</h3>
-					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/model_cartoon.svg" style="background: white">
-				</section>
-				<section data-markdown>
-					###We are not the first
-					- Gallant lab (fMRI) ([Huth 2012](http://www.sciencedirect.com/science/article/pii/S0896627312009348), [Stansbury 2013](http://www.sciencedirect.com/science/article/pii/S0896627313005503))
-					- Continuous latent states ([Park 2014](http://www.nature.com/neuro/journal/v17/n10/abs/nn.3800.html), [Buesing 2014](http://papers.nips.cc/paper/5339-clustered-factor-analysis-of-multineuronal-spike-data), [Archer 2015](https://arxiv.org/abs/1511.07367), [Park 2015](http://papers.nips.cc/paper/5790-unlocking-neural-population-non-stationarities-using-hierarchical-dynamics-models))
-					- Discrete latent states ([Escola 2011](http://www.mitpressjournals.org/doi/abs/10.1162/NECO_a_00118#.WNqSexLythE), [Putzky 2014](http://papers.nips.cc/paper/5338-a-bayesian-model-for-identifying-hierarchically-organised-states-in-neural-population-activity))
-					- ...and many more
-				</section>
-				<section data-markdown>
-					###So what's different?
-					- Previous models: latents capture *internal* dynamics
-						- latents can be driven by stimuli
-						- but vary for presentations of the same stimulus
-					- Our model: latents capture *stimulus* dynamics
-						- each stimulus frame has a set of binary tags
-						- tags follow a Hidden (semi-)Markov Model
-						- latents are *the same* for repeated stim presentations
-				</section>
-				<section>
-					<h3>Let's put that in math</h3>
-					$$
-					\begin{align}
-					N_{tu} &\sim \mathrm{Poisson}(\Lambda_{tu}\cdot\theta) \\
-					\theta &\sim \mathrm{Gamma}(s, s) \\
-					\Lambda_{tu} &= \lambda_{0u}
-					\prod_{k=1}^K (\lambda_{zuk})^{z_{tk}}
-					\prod_{r=1}^R (\lambda_{xuk})^{x_{tr}}
-					\end{align}
-					$$
-
-					<p>firing rate = baseline * latents * externals * noise</p>
-				</section>
-				<section data-markdown>
-					###Model fitting
-					We have $p(N|Z, \Theta)$
-
-					$Z$: latent variables, $\Theta$: model parameters
-
-					We want
-					$$
-					p(Z, \Theta | N) \propto p(N|Z, \Theta)\, p(Z) \, p(\Theta)
-					$$
-
-					But too hard to do Bayes' Rule exactly!
-				</section>
-				<section data-markdown>
-					> Do you want the wrong answer to the right question or the right answer to the wrong question? I think you want the former.
-					>
-					> &mdash; David Blei
-				</section>
-				<section data-markdown>
-					###Variational Bayesian (VB) Inference
-					- Replace true posterior $p$ with *approximate* posterior $q$
-					- Minimize "distance" $KL(q \Vert p)$ between actual and approximate posteriors
-					- Same as maximizing the evidence lower bound (ELBO): $\log p(N)$
-				</section>
-				<section>
-					<h3>Experiment I: Synthetic data</h3>
-					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/synthetic_comparison.svg" style="background: white">
-				</section>
-				<section>
-					<h3>Experiment II: Temporal Cortex</h3>
-					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/imgclust_web.svg" style="background: white; width:100%">
-					<p class="ref">McMahon et al. (<em>PNAS</em>, 2014)</p>
-					<p>Face, monkey, and body part cells!</p>
-				</section>
-				<section>
-					<h3>Experiment II: Temporal Cortex</h3>
-					<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/nev/imgclust_sub_web.svg" style="background: white; width:100%">
-					<p>Viewpoint selectivity!</p>
-				</section>
-				<section data-markdown>
-					###What did we do?
-					- Given spike counts, *what features drive firing?*
-					- Multiply "tag" each stimulus frame
-					- Model recovers features from even modest data sizes when signal is strong
-					- Goal is to look for patterns that **suggest new experiments.**
-				</section>
-				<section>
-					<h3>From movement to strategy</h3>
-					<img src="https://68.media.tumblr.com/5b4b51d6a41b1bfa52c323836056ab8d/tumblr_inline_olwur4ZtWq1ubozr5_500.gif" style="width: 700px">
-				</section>
-				<section>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/shariq.jpg" >
-						<p>Shariq Iqbal</p>
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/cbdrucker.jpg" >
-						<p>Caroline Drucker</p>
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/jfg.jpg" >
-						<p>Jean-Francois Gari&eacute;py</p>
-					</div>
-					<div style="float:left; width:25%">
-						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/PlattMichael.jpg" >
-						<p>Michael Platt</p>
-					</div>
-				</section>
-				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/chess.jpg">
+					<p class="ref">Yoo, Tu, Piantadosi, Hayden (<a href="https://www.biorxiv.org/content/10.1101/694604v1.abstract">Nat. Neuro, forthcoming</a>)</p>
 					<aside class="notes" data-markdown>
-						### Pros:
-						- Well-studied, normative solutions
-
-						### Cons:
-						- Highly idealized, limited dynamics
-						- Biologically aligned?
 					</aside>
 				</section>
-				<section data-background-image="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/sfn2016/penalty-shot.jpg">
+				<section>
+					<h3>aka, Pacman</h3>
+					Yoo et al. Fig 1A here
+					<p class="ref">Yoo, Tu, Piantadosi, Hayden (<a href="https://www.biorxiv.org/content/10.1101/694604v1.abstract">Nat. Neuro, forthcoming</a>)</p>
+				</section>
+				<section>
+					<h3>Modeling tactics</h3>
+					Yoo et al. Fig 2A here
+					<p class="ref">Yoo, Tu, Piantadosi, Hayden (<a href="https://www.biorxiv.org/content/10.1101/694604v1.abstract">Nat. Neuro, forthcoming</a>)</p>
+				</section>
+				<section>
+					<h3>Modeling strategies</h3>
+					<ul>
+						<li>
+							Can we go beyond kinematics?
+						</li>
+						<br>
+						<li>
+							Can we identify distinct strategies?
+						</li>
+						<br>
+						<li>
+							Can we detect changes of mind?
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>What do we want?</h3>
+					<ul>
+						<li>
+							Capture complexities present in real data
+						</li>
+						<br>
+						<li>
+							Work in terms of interpretable constructs
+						</li>
+						<br>
+						<li>
+							Be able to generate realistic behavior
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Penalty Shot</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/sess130_new.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<p class="ref">Iqbal, Yin et al. (<a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006895">PLoS Comp Bio, 2019</a>)</p>
 					<aside class="notes" data-markdown>
-						- Doesn't matter if it's social
-							- Requires anticipating another agent
-						- Repeatable, but lots of variation
-						- Decisions tightly linked to movement
+					  - two monkeys, shooter and goalie (shooter recorded)
+					  - controlled by joysticks
+					  - roles rotated, animals know each other
+					  - repeated sessions
+					  - rapidly learned, rich dynamics
 					</aside>
+				</section>
+				<section>
+					<h3>Generated trials</h3>
+					<div style="width: 50%; float: left">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/real_traces.svg" alt="">
+					</div>
+					<div style="width: 50%; float: right">
+						<img src="https://web.duke.edu/mind/level2/faculty/pearson/assets/images/penaltyshot/paper_figs/gen_traces.svg" alt="">
+					</div>
+				</section>
+				<section>
+					<h3>Goal-based dynamical systems</h3>
+					<video width="70%" align="center" controls autoplay loop src="https://web.duke.edu/mind/level2/faculty/pearson/assets/videos/penaltyshot/real_trial_goals.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</section>
+				<section>
+					<h3>How we do it</h3>
+					<ul>
+						<li>
+							Borrow from control theory, time series
+						</li>
+						<br>
+						<li>
+							Goals (= controller set points) evolve in time
+						</li>
+						<br>
+						<li>
+							Each strategy is a set of goal dynamics
+							<ul>
+								<li>
+									state includes positions, velocities of all agents
+								</li>
+								<li>
+									dynamics depend (linearly) on state
+								</li>
+								<li>
+									&asymp; (H)HMM transitions between strategies
+								</li>
+								<li>
+									transitions depend <i>nonlinearly</i> on state
+								</li>
+							</ul>
+						</li>
+						<br>
+						<li>
+							Variational Bayesian inference
+						</li>
+					</ul>
+
+				</section>
+				<section>
+					<h3>How do we compare to...</h3>
+					<ul>
+						<li>LFADS (Pandarinath et al., 2018)</li>
+						<ul>
+							<li>
+								Less dimension reduction, more time partitioning
+							</li>
+							<li>
+								Discrete, not continuous latents
+							</li>
+							<li>
+								Coevolving exogenous inputs
+							</li>
+						</ul>
+						<li>
+							rSLDS (Linderman et al., 2017)
+							<ul>
+								<li>
+									Variational, not MCMC (scale to larger data)
+								</li>
+								<li>
+									Gumbel-softmax latents extend to hierarchical HMM
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</section>
 				<section>
 					<h3>Penalty Shot</h3>
