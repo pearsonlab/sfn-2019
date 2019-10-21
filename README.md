@@ -1,5 +1,2 @@
-# Systems neuroscience beyond the tuning curve
-John's talk delivered at
-
-- Mt. Sinai Icahn School of Medicine (May 15, 2017)
-- UPenn (June 6, 2017)
+# Dynamic Decisions and Strategic Repertoires in Simulated Multi-Prey Pursuit
+John's talk delivered in the "Neural Mechanisms for Controlling Continuous Action" nanosymposium at the Society for Neuroscience 2019 Annual Meeting.
